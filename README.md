@@ -473,16 +473,151 @@ Colonial Pipeline contaba con un Plan de Respuesta a Incidentes (PRI) y ejecutó
 
 ### 2.1.4. Solución del incidente
 
+Colonial Pipeline adoptó un enfoque integral y coordinado para resolver el incidente de ransomware, combinando acciones técnicas, operativas y legales. Tras el análisis forense inicial, se utilizó el descifrador proporcionado por los atacantes luego del pago del rescate para intentar recuperar los sistemas cifrados. 
+
+**Cuando el descifrador resultó ineficaz en algunos equipos, se recurrió a copias de seguridad verificadas para restaurar los servicios:**
+- Se priorizó el restablecimiento seguro de los sistemas SCADA para reanudar la operación del oleoducto.
+- Se implementaron controles de seguridad reforzados como MFA de emergencia y segmentación de red antes de restablecer la conectividad externa.
+- La empresa colaboró con agencias gubernamentales y con la firma Mandiant para asegurar la limpieza completa de la red.
+- Se compartieron indicadores de compromiso y lecciones aprendidas con el sector energético a través de CISA y el FBI.
+
 ### 2.1.5. Causa raíz del incidente
+
+La causa raíz del incidente de Colonial Pipeline se puede atribuir a una serie de fallas en los controles de acceso y gestión de credenciales, lo que permitió la entrada de los atacantes de manera no detectada inicialmente.
+
+  - **Uso de Credenciales Filtradas en la Dark Web**: La investigación reveló que los atacantes lograron acceso mediante una cuenta VPN comprometida. Esta cuenta pertenecía a Colonial Pipeline y su contraseña se encontraba en un lote de credenciales filtradas publicado en la dark web. Los atacantes compraron o escanearon bases de datos en la darknet que contenían credenciales válidas, y una de ellas correspondía a Colonial Pipeline, lo que permitió el acceso sin detección.
+  - **Cuenta VPN Legada sin MFA**: La cuenta comprometida estaba asociada a un sistema de VPN antiguo, el cual no contaba con autenticación multifactor (MFA). Esto permitió a los atacantes ingresar a la red con solo la combinación de usuario y contraseña, lo que constituyó una vulnerabilidad crítica, al no existir una segunda capa de autenticación.
+  - **Falta de Deshabilitación de Cuenta Inactiva**: La cuenta VPN comprometida aparentemente pertenecía a un ex-empleado o no se usaba regularmente, pero seguía activa. Esto reveló una deficiencia en la gestión del ciclo de vida de identidades, ya que la cuenta no fue deshabilitada o eliminada cuando se volvió obsoleta.
+  - **Posible Escaneo de Puertos/Vulnerabilidades Públicas**: Aunque no hubo explotación de vulnerabilidades específicas, es probable que los atacantes realizaran un reconocimiento externo, buscando accesos VPN expuestos públicamente y verificando qué sistemas estaban disponibles. Esta información les permitió probar credenciales filtradas hasta obtener acceso sin utilizar malware, lo que dificultó la detección de la intrusión.
+
+**Resumen**: La causa raíz del incidente se puede considerar un error humano y procedimental. La exposición de credenciales filtradas en la dark web, sumado a la falta de autenticación fuerte en una VPN expuesta a Internet, permitió que los atacantes ingresaran como usuarios legítimos. Una vez dentro, los atacantes explotaron la confianza implícita en la red interna para desplegar el ransomware. Este incidente destaca la importancia de monitorear filtraciones de datos y de implementar controles de autenticación robustos en sistemas expuestos.
 
 ### 2.1.6. Plan de acción seguido
 
-### 2.1.7. Clasificación del Incidente
+- **Contención inmediata**:
+   - Desde el momento del descubrimiento del ataque, Colonial Pipeline ejecutó un aislamiento inmediato de los sistemas afectados, desconectando partes críticas de la red.
+   - Se apagó el oleoducto y se desconectaron los sistemas de control industrial (OT) para evitar la propagación del ransomware a los sistemas críticos de operaciones.
+   - Esta medida evitó que el atacante tuviera acceso a las redes OT, protegiendo así los controladores de bombeo y otros componentes vitales.
+
+
+- **Activación del Plan de Respuesta a Incidentes**:
+  - Colonial Pipeline activó su plan de respuesta, notificando a las autoridades pertinentes, incluidas la CISA, el FBI y el Departamento de Energía.
+  - La empresa convocó al equipo interno de TI y Seguridad, y contrató a la firma Mandiant (FireEye) para liderar la investigación forense y la contención técnica.
+  - Mandiant ayudó a rastrear las acciones del atacante, identificar el vector de acceso (la cuenta VPN comprometida) y evaluar el alcance de la intrusión.
+
+
+- **Comunicación con autoridades y público**:
+  - Colonial Pipeline mantuvo una comunicación constante con las autoridades relevantes y emitió comunicados de prensa informando sobre el ataque.
+  - Primero se informó de "problemas técnicos" y luego se confirmó el ciberataque y el apagón del oleoducto.
+  - Se coordinó con agencias gubernamentales para asegurar que la información se manejara adecuadamente y se mantuviera al público informado.
+
+
+- **Pago controlado del rescate**:
+  - Colonial Pipeline, en consulta con el FBI y sus aseguradoras, optó por negociar con los atacantes.
+  - A través de un portal seguro en la dark web proporcionado por los atacantes, se coordinó el pago de 75 BTC como parte del rescate.
+  - Este pago fue monitoreado por el FBI, lo que permitió la recopilación de información valiosa sobre las comunicaciones y las direcciones de criptomonedas, facilitando la posterior recuperación de fondos.
+
+
+- **Análisis forense post-incidente**:
+  - Mandiant realizó un análisis detallado de la intrusión, recolectando información de sistemas comprometidos, incluyendo volcados de memoria, copias forenses de discos y registros.
+  - Se identificaron las credenciales comprometidas utilizadas por los atacantes y se procedió a deshabilitar las cuentas afectadas.
+  - Además, se buscaron indicadores de compromiso (IoCs) relacionados con el malware DarkSide para garantizar que no quedaran restos de la intrusión en la red.
+
+
+- **Restauración y mejora**:
+  - Una vez descifrado el sistema (o restaurado desde backups en caso de fallos con el descifrador), se procedió con la restauración progresiva de los servicios críticos, comenzando con las operaciones del oleoducto.
+  - Se implementaron medidas de seguridad como la autenticación multifactor (MFA) en los accesos remotos y se cerraron puertos VPN antiguos.
+  - En días posteriores, se colaboró con consultores para mejorar la segmentación de red, la monitorización continua 24/7 y la auditoría de sistemas en busca de otras vulnerabilidades.
+
+
+- **Colaboración con autoridades y el sector**:
+  - Colonial Pipeline compartió detalles técnicos del ataque con la CISA y el sector energético, alimentando alertas conjuntas y ayudando a prevenir futuros ataques en otras organizaciones.
+  - Esta cooperación fue clave para prevenir un ataque similar en otras empresas del sector energético.
+
+
+### 2.1.7. Clasificación del Incidente (Taxonomía)
+
+<p>El incidente que afectó a Colonial Pipeline se clasifica como un <strong>ciberataque de tipo ransomware</strong>. El grupo responsable fue DarkSide, un actor de amenazas conocido por llevar a cabo ataques de ransomware. Este grupo cifró los sistemas de Colonial Pipeline y exigió un rescate para restaurar el acceso a los datos y sistemas comprometidos. La técnica empleada para este ataque es común en las campañas de ransomware, donde los atacantes buscan bloquear el acceso a los sistemas críticos de las organizaciones y extorsionarlas a cambio de una recompensa.</p>
+
+<p>En cuanto al <strong>vector de ataque</strong>, los atacantes utilizaron <strong>credenciales filtradas</strong> para obtener acceso inicial a la red. Estas credenciales pertenecían a una cuenta de VPN de Colonial Pipeline que había sido comprometida y publicada en la dark web. A través de la circulación de estas credenciales en foros clandestinos, los atacantes pudieron acceder a la red sin ser detectados inicialmente, lo que les permitió llevar a cabo su ataque sin utilizar técnicas más complejas, como el phishing o explotación de vulnerabilidades de software.</p>
+
+<p>Las <strong>técnicas utilizadas</strong> en este incidente incluyen principalmente el <strong>uso de credenciales válidas</strong> para ingresar a la red corporativa, seguido por la <strong>ejecución de ransomware</strong> en los sistemas afectados. Tras acceder a la red mediante la cuenta de VPN, los atacantes aprovecharon la falta de autenticación multifactor (MFA) en los servicios de acceso remoto para ganar acceso a sistemas críticos. Posteriormente, se movieron lateralmente dentro de la infraestructura utilizando herramientas comunes de movimiento lateral como <strong>Cobalt Strike</strong>, lo que les permitió escalar privilegios y extender el impacto del ataque.</p>
+
+<p>El <strong>impacto</strong> del ataque fue significativo tanto en términos operativos como financieros. La interrupción operativa fue grave, ya que obligó a Colonial Pipeline a desconectar partes críticas de su infraestructura, incluido el oleoducto, lo que afectó el suministro de combustible en varias regiones de Estados Unidos. Además de la interrupción de los servicios, la empresa sufrió pérdidas financieras relacionadas con el pago del rescate y los costos derivados de la investigación, la recuperación y la mejora de sus sistemas de seguridad post-incidente. La reputación de la empresa también se vio gravemente afectada, ya que la exposición pública del ataque y las vulnerabilidades de seguridad evidenciaron deficiencias importantes en los controles de acceso de la organización.</p>
+
+<p>Desde la perspectiva de la taxonomía del marco MITRE ATT&CK, este incidente puede clasificarse en las siguientes fases:</p>
+
+<ul>
+    <li><strong>Initial Access</strong>: Los atacantes lograron acceder a la red utilizando <strong>credenciales válidas</strong> obtenidas a través de filtraciones previas en la dark web.</li>
+    <li><strong>Execution</strong>: El ataque culminó con la <strong>ejecución de ransomware</strong>, que cifró los sistemas comprometidos.</li>
+    <li><strong>Persistence</strong>: Los atacantes utilizaron herramientas como <strong>Cobalt Strike</strong> para mantener su acceso a la red y moverse lateralmente dentro de la infraestructura.</li>
+    <li><strong>Privilege Escalation</strong>: A medida que los atacantes se movían dentro de la red, escalaron privilegios para obtener acceso a sistemas más sensibles.</li>
+    <li><strong>Impact</strong>: La interrupción de operaciones, así como las pérdidas económicas y reputacionales, fueron las consecuencias principales del ataque.</li>
+</ul>
+
+<p>Finalmente, según el marco de respuesta a incidentes, las fases de <strong>contención</strong>, <strong>erradicación</strong> y <strong>recuperación</strong> se implementaron en la respuesta de Colonial Pipeline. Se aislaron los sistemas comprometidos, se deshabilitaron las cuentas de acceso y se restauraron los servicios mediante descifradores y backups. A pesar de la interrupción, la acción rápida permitió a la empresa comenzar su proceso de recuperación y restauración de operaciones en un plazo relativamente corto.</p>
 
 ## 2.2. Pérdidas
 
+<p>El ataque a Colonial Pipeline tuvo un impacto considerable en diversas áreas, tanto tangibles como intangibles. Las pérdidas no solo incluyeron costos directos como el pago del rescate, sino también gastos derivados de la interrupción operativa, la respuesta y la remediación, así como el daño a la reputación de la empresa. Estas consecuencias resaltan la importancia de una infraestructura de ciberseguridad robusta para prevenir incidentes de esta magnitud.</p>
+
 ### 2.2.1. Económicas
+
+<p>Las pérdidas económicas derivadas del ataque a Colonial Pipeline son significativas y se pueden categorizar en varias áreas clave. La pérdida directa más evidente fue el <strong>pago de rescate</strong> de 75 BTC (aproximadamente 4,4 millones de dólares), aunque una parte de esos fondos (63,7 BTC) fue recuperada por el gobierno un mes después. Sin embargo, Colonial Pipeline no logró recuperar aproximadamente 2,1 millones de dólares debido a la fluctuación del valor de Bitcoin. A pesar de que muchas pólizas de ciberseguro cubren estos rescates, generalmente resultan en primas más altas para la empresa en el futuro.</p>
+
+<p>En términos de <strong>pérdidas operativas</strong>, el impacto fue considerable debido a la interrupción de las operaciones. Colonial Pipeline dejó de transportar y vender combustible durante varios días, lo que resultó en la pérdida de ingresos por la venta de 2,5 millones de barriles de petróleo diarios. A pesar de los márgenes pequeños por barril, las pérdidas de ingresos en esos cinco días suman varios millones de dólares. Además, la empresa tuvo que reembolsar o no cobrar penalidades contractuales a proveedores por la falta de entrega, lo que también representó un costo importante.</p>
+
+<p>Los <strong>costos de respuesta y remediación</strong> fueron otro factor económico relevante. Estos incluyen los gastos derivados de la contratación de firmas externas de respuesta como Mandiant, la asesoría legal, y los costos asociados con la adquisición de nuevos sistemas de hardware y software para reemplazar los comprometidos. Además, Colonial Pipeline anunció inversiones significativas para mejorar su ciberseguridad a largo plazo, lo que implica un aumento en su presupuesto de TI para implementar soluciones de autenticación multifactor (MFA), segmentación de red, y herramientas de detección y respuesta ante incidentes.</p>
+
+<p>Finalmente, el incidente también provocó <strong>penalizaciones legales y regulatorias</strong>. Si bien Colonial Pipeline no fue multada de inmediato, el ataque dio lugar a nuevas normativas y directivas de seguridad impuestas por la Transportation Security Administration (TSA). El incumplimiento de estas directivas puede resultar en sanciones económicas adicionales. Además, las posibles demandas colectivas de partes afectadas, como clientes o proveedores, podrían generar más costos legales para la empresa.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th><strong>Categoría</strong></th>
+      <th><strong>Descripción</strong></th>
+      <th><strong>Valor Estimado</strong></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Pago de Rescate</strong></td>
+      <td>El pago inicial de 75 BTC (aproximadamente 4,4 millones de dólares) a los atacantes. A pesar de la recuperación parcial de 63,7 BTC, Colonial no recuperó 2,1 millones debido a la fluctuación del valor de Bitcoin.</td>
+      <td>≈ $4,4 millones (75 BTC), con $2,1 millones no recuperados.</td>
+    </tr>
+    <tr>
+      <td><strong>Pérdidas Operativas</strong></td>
+      <td>La interrupción de las operaciones resultó en la pérdida de ingresos por la venta de 2,5 millones de barriles diarios. También hubo reembolsos o penalidades no cobradas a proveedores debido a la falta de entrega.</td>
+      <td>Varias millones de dólares por ingresos perdidos.</td>
+    </tr>
+    <tr>
+      <td><strong>Costos de Respuesta y Remediación</strong></td>
+      <td>Contratación de firmas externas (Mandiant), asesoría legal, adquisición de hardware/software para reemplazar sistemas comprometidos, y gastos para mejorar la ciberseguridad.</td>
+      <td>Haciendo inversiones adicionales por varios millones de dólares.</td>
+    </tr>
+    <tr>
+      <td><strong>Penalizaciones Legales/Regulatorias</strong></td>
+      <td>Posibles multas por incumplir las directivas de seguridad de la TSA, así como posibles demandas colectivas de clientes o proveedores afectados.</td>
+      <td>Costos no estimados, pero potencialmente significativos por demandas legales y sanciones.</td>
+    </tr>
+  </tbody>
+</table>
+
 ### 2.2.2. Reputacionales
+
+<p>El ataque a Colonial Pipeline tuvo un impacto significativo en su reputación, tanto a nivel comercial como público. Las consecuencias no solo se limitan a los aspectos financieros, sino que también se reflejan en la percepción que los socios, clientes y el público en general tienen sobre la seguridad y confiabilidad de la empresa. A continuación se detallan los principales impactos reputacionales derivados del incidente:</p>
+
+<ul>
+  <li><strong>Desconfianza de los Socios Comerciales:</strong> El incidente expuso vulnerabilidades significativas en la infraestructura de seguridad de Colonial Pipeline. Esto pudo haber generado desconfianza en sus socios comerciales, quienes podrían reconsiderar futuras colaboraciones o compromisos con la empresa debido a la exposición de información sensible y la interrupción de servicios críticos.</li>
+
+  <li><strong>Impacto en la Confianza del Público:</strong> Al ser un caso de alto perfil, Colonial Pipeline pasó a ser asociado con un ataque de ransomware que afectó un sistema crítico de infraestructura. Esto podría haber erosionado la confianza del público, especialmente en lo que respecta a la seguridad y fiabilidad del suministro de combustible.</li>
+
+  <li><strong>Relaciones Públicas y Gestión de Crisis:</strong> Colonial Pipeline tuvo que desplegar esfuerzos significativos en relaciones públicas para reparar su imagen. La empresa invirtió recursos en campañas para demostrar su compromiso con la ciberseguridad y la mejora de sus sistemas de protección para evitar futuros ataques.</li>
+
+  <li><strong>Posibles Restricciones Regulatorias:</strong> La pérdida de confianza generada por el ataque podría haber tenido implicaciones regulatorias, ya que los reguladores podrían imponer restricciones adicionales o exigencias más estrictas sobre la seguridad cibernética en el sector de la energía, lo que afecta indirectamente a Colonial Pipeline.</li>
+</ul>
+
+<p>En resumen, las consecuencias reputacionales del ataque son de largo alcance y podrían afectar la capacidad de Colonial Pipeline para operar de manera eficiente en el futuro, además de generar un costo indirecto asociado con la reconstrucción de su imagen pública y la restauración de la confianza entre sus socios y clientes.</p>
 
 ## 2.3. Tácticas, técnicas y procedimientos (TTPs) utilizados por el grupo
 
