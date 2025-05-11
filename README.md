@@ -624,9 +624,116 @@ La causa raíz del incidente de Colonial Pipeline se puede atribuir a una serie 
 El ataque a Colonial Pipeline involucró una serie de tácticas y técnicas comunes en ataques de ransomware, particularmente asociados con grupos que operan bajo el modelo Ransomware-as-a-Service (RaaS). A continuación se describen las tácticas, técnicas y procedimientos utilizados por el grupo atacante, DarkSide, mapeados a MITRE ATT&CK.
 
 ### 2.3.1. Tácticas
-### 2.3.2. Técnicas
-### 2.3.3. Procedimientos
+Las tácticas representan las metas de los atacantes durante el ciclo de vida de un ataque. En este caso, el grupo atacante empleó las siguientes tácticas, que corresponden a los objetivos generales del ataque:
 
+- **Initial Access (Acceso inicial):** Los atacantes obtuvieron acceso inicial a la red utilizando credenciales válidas.
+- **Execution (Ejecución):** Ejecución de código malicioso en los sistemas comprometidos.
+- **Persistence (Persistencia):** Mantener el acceso a la red comprometida.
+- **Privilege Escalation (Escalamiento de privilegios):** Obtener privilegios elevados para facilitar el movimiento lateral y el cifrado de datos.
+- **Defense Evasion (Evasión de defensa):** Evitar la detección mediante técnicas como la modificación de registros o deshabilitar antivirus.
+- **Discovery (Descubrimiento):** Realizar un reconocimiento interno para mapear la red y detectar objetivos críticos.
+- **Lateral Movement (Movimiento lateral):** Desplazamiento dentro de la red comprometida para alcanzar otras máquinas y sistemas. 
+- **Collection (Recopilación):** Recolectar datos valiosos para exfiltrarlos o cifrarlos. 
+- **Exfiltration (Exfiltración):** Extraer datos desde la red comprometida hacia un servidor de comando y control. 
+- **Command and Control (C2) (Comando y Control):** Establecer comunicación con los sistemas comprometidos mediante canales cifrados. 
+- **Impact (Impacto):** Cifrado de datos y extorsión con el objetivo de obtener un rescate.
+
+### 2.3.2. Técnicas
+Las técnicas son métodos específicos utilizados por los atacantes dentro de cada táctica. A continuación se detallan las técnicas empleadas durante el ataque a Colonial Pipeline, con sus respectivos códigos según MITRE ATT&CK:
+
+<table>
+  <thead>
+    <tr>
+      <th>Código MITRE</th>
+      <th>Técnica</th>
+      <th>Descripción</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>T1078</td>
+      <td>Valid Accounts (Credenciales válidas)</td>
+      <td>Los atacantes utilizaron credenciales válidas comprometidas para acceder a la red.</td>
+    </tr>
+    <tr>
+      <td>T1133</td>
+      <td>External Remote Services (Servicios remotos externos)</td>
+      <td>Accedieron a la red a través de servicios remotos, como VPN.</td>
+    </tr>
+    <tr>
+      <td>T1059</td>
+      <td>Command and Scripting Interpreter (Intérprete de comandos y secuencias de comandos)</td>
+      <td>Ejecución de comandos maliciosos a través de PowerShell, CMD y otros intérpretes de comandos.</td>
+    </tr>
+    <tr>
+      <td>T1136</td>
+      <td>Create Account (Crear cuenta)</td>
+      <td>Crearon cuentas de usuario ocultas para persistir dentro de la red comprometida.</td>
+    </tr>
+    <tr>
+      <td>T1003</td>
+      <td>OS Credential Dumping (Volcado de credenciales de sistema operativo)</td>
+      <td>Volcaron credenciales de administrador para escalar privilegios.</td>
+    </tr>
+    <tr>
+      <td>T1087</td>
+      <td>Account Discovery (Descubrimiento de cuentas)</td>
+      <td>Identificaron cuentas de usuario para reconocer la infraestructura de la red.</td>
+    </tr>
+    <tr>
+      <td>T1135</td>
+      <td>Network Share Discovery (Descubrimiento de recursos compartidos en red)</td>
+      <td>Descubrieron servidores de archivos y otros sistemas de almacenamiento en la red.</td>
+    </tr>
+    <tr>
+      <td>T1018</td>
+      <td>Remote System Discovery (Descubrimiento de sistemas remotos)</td>
+      <td>Detectaron otros sistemas en la red utilizando herramientas nativas como net view.</td>
+    </tr>
+    <tr>
+      <td>T1074</td>
+      <td>Data Staging (Preparación de datos)</td>
+      <td>Recolectaron datos en archivos comprimidos para su posterior exfiltración.</td>
+    </tr>
+    <tr>
+      <td>T1041</td>
+      <td>Exfiltration Over C2 (Exfiltración a través de canal C2)</td>
+      <td>Exfiltraron datos a través de un canal de comando y control cifrado, utilizando TOR.</td>
+    </tr>
+    <tr>
+      <td>T1573</td>
+      <td>Encrypted Channels (Canales cifrados)</td>
+      <td>Utilizaron comunicaciones cifradas para mantener el control sobre la red comprometida.</td>
+    </tr>
+    <tr>
+      <td>T1486</td>
+      <td>Data Encrypted for Impact (Datos cifrados con el objetivo de causar impacto)</td>
+      <td>Cifraron los datos de la red comprometida para exigir el rescate.</td>
+    </tr>
+    <tr>
+      <td>T1490</td>
+      <td>Inhibit System Recovery (Inhibir la recuperación del sistema)</td>
+      <td>Deshabilitaron las copias de seguridad (shadow copies) para evitar la recuperación de los datos cifrados.</td>
+    </tr>
+    <tr>
+      <td>T1005</td>
+      <td>Data from Local System (Datos desde el sistema local)</td>
+      <td>Robaron información sensible almacenada en sistemas locales.</td>
+    </tr>
+  </tbody>
+</table>
+
+### 2.3.3. Procedimientos
+Los procedimientos son las maneras específicas en que los atacantes implementan las técnicas dentro de un ataque. En este caso, los procedimientos empleados por DarkSide incluyen:
+
+- **Acceso Inicial (T1078 y T1133):** Los atacantes utilizaron credenciales válidas comprometidas y VPNs para acceder inicialmente a la red de Colonial Pipeline. Este acceso inicial fue realizado sin necesidad de phishing. 
+- **Persistencia (T1133 y T1136):** Una vez dentro de la red, los atacantes crearon cuentas ocultas y mantuvieron sesiones de VPN activas para asegurar la persistencia. También emplearon herramientas como Cobalt Strike para instalar beacons que permitieron la comunicación y control continuos dentro de la red comprometida. 
+- **Escalamiento de Privilegios (T1003):** Utilizaron herramientas como Mimikatz para volcar las credenciales de administración de dominio y escalar sus privilegios, permitiéndoles moverse lateralmente dentro de la red y cifrar sistemas críticos. 
+- **Exfiltración de Datos (T1074 y T1041):** Los atacantes exfiltraron aproximadamente 100 GB de datos de Colonial Pipeline, almacenándolos en archivos comprimidos antes de extraerlos a través de canales cifrados usando TOR. 
+- **Cifrado y Extorsión (T1486 y T1490):** Una vez que los atacantes cifraron los datos, exigieron el pago de un rescate en Bitcoin a cambio de la clave de descifrado. Además, robaron datos sensibles y amenazaron con divulgarlos en la dark web si no se pagaba el rescate. 
+- **Comando y Control (T1573 y T1090.003):** Para mantener el control sobre los sistemas comprometidos, los atacantes utilizaron canales cifrados a través de TOR y emplearon Cobalt Strike para ejecutar órdenes dentro de la red comprometida.
+
+El ataque a Colonial Pipeline siguió un ciclo bien orquestado de tácticas y técnicas empleadas por el grupo DarkSide, con un enfoque en la exfiltración de datos y la extorsión mediante cifrado, todo ello facilitado por vulnerabilidades en la infraestructura de la red de la compañía.
 ## 2.4. Vulnerabilidades asociadas al incidente
 
 ### 2.4.1. CVE
