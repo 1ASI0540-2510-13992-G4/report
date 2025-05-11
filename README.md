@@ -619,7 +619,9 @@ La causa raíz del incidente de Colonial Pipeline se puede atribuir a una serie 
 
 <p>En resumen, las consecuencias reputacionales del ataque son de largo alcance y podrían afectar la capacidad de Colonial Pipeline para operar de manera eficiente en el futuro, además de generar un costo indirecto asociado con la reconstrucción de su imagen pública y la restauración de la confianza entre sus socios y clientes.</p>
 
-## 2.3. Tácticas, técnicas y procedimientos (TTPs) utilizados por el grupo
+## 2.3. Tácticas, técnicas y procedimientos (TTPs) utilizados por el grupo (incluir codigos)
+
+El ataque a Colonial Pipeline involucró una serie de tácticas y técnicas comunes en ataques de ransomware, particularmente asociados con grupos que operan bajo el modelo Ransomware-as-a-Service (RaaS). A continuación se describen las tácticas, técnicas y procedimientos utilizados por el grupo atacante, DarkSide, mapeados a MITRE ATT&CK.
 
 ### 2.3.1. Tácticas
 ### 2.3.2. Técnicas
