@@ -735,11 +735,22 @@ Los procedimientos son las maneras específicas en que los atacantes implementan
 
 El ataque a Colonial Pipeline siguió un ciclo bien orquestado de tácticas y técnicas empleadas por el grupo DarkSide, con un enfoque en la exfiltración de datos y la extorsión mediante cifrado, todo ello facilitado por vulnerabilidades en la infraestructura de la red de la compañía.
 ## 2.4. Vulnerabilidades asociadas al incidente
+El incidente de Colonial Pipeline expuso una serie de vulnerabilidades que no solo fueron técnicas, sino también organizacionales, revelando fallas en la gestión de accesos, configuraciones de seguridad y procesos de monitoreo. A diferencia de otros ciberataques, donde las vulnerabilidades explotadas están asociadas a fallos de software específicos, este ataque se centró en debilidades estructurales y operativas dentro de la infraestructura de seguridad de la empresa. Las vulnerabilidades identificadas en este incidente, como la falta de autenticación multifactor (MFA), la gestión deficiente de credenciales y la exposición de servicios críticos a Internet, ponen de manifiesto cómo una cadena de debilidades interconectadas puede ser aprovechada por los atacantes para lograr un impacto significativo. A continuación, se detallan las principales vulnerabilidades asociadas a este ataque, analizadas mediante marcos de referencia reconocidos como el CVE, CVSS y CWE.
 
 ### 2.4.1. CVE
-### 2.4.2. CVSS
-### 2.4.3. CWE
+En el incidente de Colonial Pipeline no se explotó una vulnerabilidad de software zero-day con un CVE asignado específicamente. En lugar de ello, las vulnerabilidades fueron más relacionadas con malas configuraciones y políticas de seguridad deficientes. Aunque no se identificó un CVE explícito explotado en este ataque, se sabe que las intrusiones de ransomware a menudo aprovechan CVEs en software expuesto a Internet. Ejemplos de vulnerabilidades previas que han sido explotadas en VPNs incluyen CVE-2019-11510 (Pulse Secure) y CVE-2018-13379 (Fortinet), aunque en este caso, parece que los atacantes usaron credenciales válidas filtradas en la dark web para acceder a la red, más que explotar una vulnerabilidad en el software VPN.
 
+### 2.4.2. CVSS
+El Common Vulnerability Scoring System (CVSS) es una métrica que ayuda a evaluar la gravedad de las vulnerabilidades de seguridad en los sistemas. En este caso, no se asignaron CVSS a una vulnerabilidad específica de software, ya que el ataque no explotó un CVE conocido. Sin embargo, la falta de medidas de seguridad, como la autenticación multifactor (MFA) en la VPN, representa una vulnerabilidad crítica que probablemente recibiría una puntuación alta en CVSS debido al impacto potencial y la facilidad con la que los atacantes pudieron obtener acceso con credenciales filtradas. La exposición a Internet de servicios críticos, como la VPN, también podría haber incrementado esta puntuación debido al riesgo inherente de un acceso no autorizado.
+
+### 2.4.3. CWE
+El ataque a Colonial Pipeline puede clasificarse en varias categorías del Common Weakness Enumeration (CWE), que es un estándar que clasifica debilidades en software. Entre las más relevantes se incluyen:
+
+- **CWE-287:** Autenticación Incorrecta. La falta de autenticación multifactor (MFA) en el acceso remoto a través de VPN representa una debilidad crítica. Un solo factor (como una contraseña) es insuficiente para proteger sistemas expuestos a Internet. 
+- **CWE-255:** Manejo Deficiente de Credenciales. En este caso, la gestión de credenciales comprometidas fue deficiente, ya que una cuenta olvidada permaneció activa, lo que permitió a los atacantes acceder a la red. 
+- **CWE-592:** Cuentas No Deshabilitadas. La cuenta comprometida, aunque no estaba en uso, seguía activa, lo que sugiere una falta de seguimiento de cuentas inactivas. 
+- **CWE-668:** Exposición de Recursos a Esferas No Confiables. La falta de segmentación entre las redes de IT y OT permitió que un ataque a los sistemas de TI tuviera el potencial de afectar las operaciones físicas, incluso si finalmente fue mitigado por un apagado manual. 
+- **CWE-1193:** Falta de Alertas de Seguridad. La respuesta lenta ante el ataque indica la ausencia de una detección temprana adecuada, lo que permite que el ataque se prolongara sin ser detectado durante varios días.
 
 # **Capítulo 3: Estrategias de Ciberseguridad**
 
