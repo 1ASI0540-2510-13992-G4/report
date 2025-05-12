@@ -756,7 +756,44 @@ El ataque a Colonial Pipeline puede clasificarse en varias categorías del Commo
 
 ## 3.1. Estrategias a Nivel Organizacional
 
+A nivel organizacional, las estrategias de ciberseguridad buscan establecer una cultura, políticas y estructuras de gobernanza que permitan prevenir, detectar, responder y recuperarse de incidentes como el ataque a Colonial Pipeline. A continuación, se detallan las principales estrategias:
+
+### 1. Gobernanza y liderazgo en ciberseguridad
+
+- Establecer un Comité de Ciberseguridad liderado por el CISO, con representación de áreas clave (TI, legal, riesgos, operaciones).
+- Asignar responsabilidades claras para la gestión de incidentes en toda la organización.
+- Definir e institucionalizar un Plan de Continuidad de Negocio y un Plan de Respuesta a Incidentes (PRI).
+
+### 2. Concientización y entrenamiento
+
+- Implementar un programa continuo de capacitación en ciberseguridad para todos los niveles del personal.
+- Realizar simulacros de respuesta a incidentes al menos 1 vez por semestre.
+- Educar específicamente sobre riesgos relacionados a la dark web, credenciales filtradas, y phishing.
+
+### 3. Gestión de riesgos
+
+- Aplicar una metodología formal de gestión de riesgos como la de NIST SP 800-30.
+- Identificar, evaluar y clasificar los activos críticos de la organización.
+- Mantener actualizado un mapa de riesgos cibernéticos, con foco en vectores de entrada como VPNs, accesos remotos y software heredado.
+
+### 4. Cumplimiento y normativas
+
+Alinear las políticas organizacionales a marcos como:
+- ISO/IEC 27001 y 27035
+- NIST CSF 2.0
+- CIS Controls v8
+Asegurar cumplimiento de requisitos regulatorios específicos del sector energético o crítico
+
 ## 3.2. Estrategias a Nivel de Infraestructura
+
+A nivel de infraestructura, las estrategias deben enfocarse en proteger, segmentar, monitorear y fortalecer todos los componentes técnicos que soportan los servicios críticos de la organización. El caso de Colonial Pipeline demostró cómo una mala configuración (una VPN obsoleta sin MFA) puede comprometer toda la operación.
+
+FALTA TERMINAR
+- GESTION DE ACCESOS Y AUTENTICACION
+- SEGMENTACION DE RED
+- MONITOREO Y DETECCION
+- PARCHEO Y GESTION DE VULNERABILDIDAES
+- BACKUPS
 
 ## 3.3. Estrategias a Nivel de Desarrollo de Software
 
