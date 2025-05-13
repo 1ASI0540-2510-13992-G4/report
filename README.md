@@ -807,12 +807,33 @@ Asegurar cumplimiento de requisitos regulatorios específicos del sector energé
 
 A nivel de infraestructura, las estrategias deben enfocarse en proteger, segmentar, monitorear y fortalecer todos los componentes técnicos que soportan los servicios críticos de la organización. El caso de Colonial Pipeline demostró cómo una mala configuración (una VPN obsoleta sin MFA) puede comprometer toda la operación.
 
-FALTA TERMINAR
-- GESTION DE ACCESOS Y AUTENTICACION
-- SEGMENTACION DE RED
-- MONITOREO Y DETECCION
-- PARCHEO Y GESTION DE VULNERABILDIDAES
-- BACKUPS
+### GESTION DE ACCESOS Y AUTENTICACION: 
+Implementar autenticación multifactor (MFA) en todos los accesos remotos, especialmente en VPNs y portales administrativos.
+Aplicar el principio de mínimo privilegio (Least Privilege) en cuentas de usuario y administrador.
+Uso obligatorio de administradores de contraseñas y políticas de renovación periódica de credenciales.
+
+### SEGMENTACION DE RED
+Separar lógicamente las redes TI y OT (Tecnología Operativa) mediante zonas de seguridad, firewalls y VLANs.
+Aplicar controles estrictos en las interconexiones entre zonas, con políticas de acceso explícitas y monitoreo constante.
+Crear entornos aislados (sandboxes) para pruebas y análisis de malware o comportamiento sospechoso.
+
+### MONITOREO Y DETECCION
+Implementar un SIEM (Security Information and Event Management) para correlación de eventos y alertas tempranas.
+Desplegar EDR (Endpoint Detection and Response) en estaciones de trabajo y servidores críticos.
+Configurar alertas automáticas para actividades anómalas como accesos fuera de horario, movimientos laterales o uso de herramientas como Mimikatz o Cobalt Strike.
+
+### PARCHEO Y GESTION DE VULNERABILDIDAES
+Establecer un proceso continuo de vulnerability management que incluya:
+Escaneos semanales de vulnerabilidades (CVE)
+Priorización basada en CVSS
+Identificación de debilidades estructurales (CWE)
+Automatizar la gestión de parches en sistemas Windows, Linux y software de terceros.
+
+### BACKUPS
+Mantener copias de seguridad offline y cifradas, verificadas regularmente.
+Realizar restauraciones de prueba periódicas para asegurar la integridad de los backups.
+Usar soluciones de respaldo inmutable o con retención tipo WORM (Write Once, Read Many).
+Estas medidas fortalecen la base técnica de la organización para resistir ataques, responder con rapidez y garantizar la disponibilidad de servicios ante un incidente mayor.
 
 ## 3.3. Estrategias a Nivel de Desarrollo de Software
 
@@ -840,6 +861,30 @@ El empleo de **herramientas de análisis estático (SAST)** permite detectar vul
 
 
 ## 3.4. Estrategias a Nivel de Sistema de Información
+
+### Control de acceso basado en roles (RBAC)
+Implementar un esquema de roles y permisos mínimos en los sistemas de información, asegurando que los usuarios solo tengan acceso a lo necesario.
+Revocar cuentas inactivas automáticamente y establecer auditorías periódicas de accesos.
+Usar políticas de expiración y bloqueo para cuentas administrativas.
+
+### Monitoreo y auditoría de sistemas
+Activar registros de eventos (logs) detallados en servidores, bases de datos y aplicaciones críticas.
+Utilizar soluciones SIEM para correlacionar y alertar sobre comportamientos anómalos en el acceso a los sistemas.
+Asegurar la integridad de logs con firma digital y almacenamiento seguro.
+
+### Protección de la información y cifrado
+Aplicar cifrado de datos en reposo y en tránsito (bases de datos, archivos, backups, comunicaciones).
+Utilizar algoritmos robustos AES-256 para almacenamiento, TLS 1.2+ para comunicaciones
+Proteger datos personales o sensibles conforme a normativas como GDPR o equivalentes locales.
+
+### Disponibilidad y redundancia
+Implementar alta disponibilidad (HA) para servicios críticos, especialmente los que gestionan facturación, logística o monitoreo.
+Usar sistemas de failover y mecanismos de replicación para asegurar la continuidad del negocio ante caídas.
+
+### Gestión de la configuración segura
+Estandarizar la configuración de sistemas mediante herramientas como Ansible, Puppet o Chef.
+Aplicar guías de endurecimiento (hardening) recomendadas por CIS Benchmarks o NIST.
+Desactivar servicios innecesarios y restringir puertos abiertos en todos los servidores y sistemas de información.
 
 ## Conclusiones 
 
