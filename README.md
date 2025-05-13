@@ -840,3 +840,16 @@ El empleo de **herramientas de análisis estático (SAST)** permite detectar vul
 
 
 ## 3.4. Estrategias a Nivel de Sistema de Información
+
+
+## Conclusiones 
+
+El análisis forense del ataque a Colonial Pipeline evidencia de manera contundente cómo una falla básica en los controles de autenticación puede desencadenar una crisis de escala nacional cuando se trata de infraestructura crítica. A través de la explotación de credenciales filtradas en la dark web y la ausencia de autenticación multifactor en una VPN legada, el grupo criminal DarkSide logró comprometer los sistemas de TI de una de las mayores redes de distribución de combustible en Estados Unidos, afectando directamente a millones de personas y al funcionamiento económico de varias regiones del país.
+
+Este incidente permite concluir que los atacantes no requieren de técnicas sofisticadas o vulnerabilidades zero-day para lograr un impacto significativo; basta con encontrar puntos de acceso mal gestionados y persistencias organizacionales en la administración de identidades y accesos. Además, el uso de la dark web como ecosistema para adquirir credenciales, negociar rescates y exfiltrar información refuerza su rol como catalizador operacional del cibercrimen moderno.
+
+Colonial Pipeline reaccionó rápidamente activando su plan de respuesta a incidentes, aislando sus sistemas críticos, colaborando con autoridades, y recuperando parcialmente el rescate mediante coordinación con el FBI. No obstante, el incidente también puso en evidencia una falta de segmentación efectiva entre las redes TI y OT, una gestión inadecuada del ciclo de vida de cuentas inactivas, y una dependencia operacional que hace vulnerables a estas infraestructuras frente a ataques dirigidos.
+
+En términos técnicos, la operación de DarkSide se alinea con múltiples tácticas y técnicas del marco MITRE ATT&CK, incluyendo el uso de cuentas válidas (T1078), ejecución remota (T1059), escalamiento de privilegios (T1003), y cifrado de impacto (T1486). La ausencia de malware avanzado destaca la importancia del monitoreo de comportamiento y la detección de accesos anómalos como mecanismos de defensa clave.
+
+Finalmente, el caso resalta la necesidad de una estrategia de ciberseguridad integral, con enfoque en prevención proactiva, segmentación de entornos, autenticación robusta, y análisis continuo de exposición en la dark web. Lo sucedido con Colonial Pipeline no fue un evento aislado, sino una manifestación de riesgos estructurales latentes que aún persisten en múltiples sectores estratégicos.
