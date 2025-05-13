@@ -897,3 +897,29 @@ Colonial Pipeline reaccionó rápidamente activando su plan de respuesta a incid
 En términos técnicos, la operación de DarkSide se alinea con múltiples tácticas y técnicas del marco MITRE ATT&CK, incluyendo el uso de cuentas válidas (T1078), ejecución remota (T1059), escalamiento de privilegios (T1003), y cifrado de impacto (T1486). La ausencia de malware avanzado destaca la importancia del monitoreo de comportamiento y la detección de accesos anómalos como mecanismos de defensa clave.
 
 Finalmente, el caso resalta la necesidad de una estrategia de ciberseguridad integral, con enfoque en prevención proactiva, segmentación de entornos, autenticación robusta, y análisis continuo de exposición en la dark web. Lo sucedido con Colonial Pipeline no fue un evento aislado, sino una manifestación de riesgos estructurales latentes que aún persisten en múltiples sectores estratégicos.
+
+
+## Recomendaciones
+
+A partir del análisis forense del incidente sufrido por Colonial Pipeline, se proponen las siguientes recomendaciones orientadas a reducir el riesgo de ataques similares en organizaciones que operan infraestructura crítica, especialmente aquellas expuestas a amenazas provenientes de la dark web.
+
+### 1. Fortalecimineto del control de accesos remotos
+
+- Implementar autenticación multifactor (MFA) obligatoria para todo acceso remoto, especialmente en servicios expuestos como VPNs.
+- Aplicar políticas de caducidad y revisión periódica de credenciales.
+- Auditar y deshabilitar cuentas inactivas o legadas que ya no sean necesarias.
+
+### 2. Monitoreo proactivo de la dark web
+
+- Utilizar herramientas de threat intelligence y servicios de monitoreo de credenciales expuestas en la dark web.
+- Establecer alertas automáticas cuando datos vinculados a la organización (dominios, emails corporativos, IPs) aparezcan en foros clandestinos.
+
+### 3. Segmentación estricta entre redes TI y OT
+
+- Implementar una separación lógica y física entre los sistemas de tecnología de la información (TI) y los de operación tecnológica (OT).
+- Usar firewalls internos, zonas desmilitarizadas (DMZ) y políticas de acceso mínimo necesario para evitar la propagación entre entornos.
+
+### 4. Colaboración sectorial y con autoridades
+
+- Establecer canales activos de intercambio de inteligencia de amenazas con otros actores del sector (ej. energía, transporte).
+- Participar en iniciativas públicas-privadas lideradas por organismos como CISA o el CSIRT nacional para anticipar nuevas variantes de ransomware.
