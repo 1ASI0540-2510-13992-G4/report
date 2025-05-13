@@ -841,7 +841,6 @@ El empleo de **herramientas de análisis estático (SAST)** permite detectar vul
 
 ## 3.4. Estrategias a Nivel de Sistema de Información
 
-
 ## Conclusiones 
 
 El análisis forense del ataque a Colonial Pipeline evidencia de manera contundente cómo una falla básica en los controles de autenticación puede desencadenar una crisis de escala nacional cuando se trata de infraestructura crítica. A través de la explotación de credenciales filtradas en la dark web y la ausencia de autenticación multifactor en una VPN legada, el grupo criminal DarkSide logró comprometer los sistemas de TI de una de las mayores redes de distribución de combustible en Estados Unidos, afectando directamente a millones de personas y al funcionamiento económico de varias regiones del país.
