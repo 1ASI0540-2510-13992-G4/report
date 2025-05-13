@@ -262,6 +262,15 @@ Colonial Pipeline opera uno de los sistemas de oleoductos más grandes y crític
 La decisión de detener por completo las operaciones del oleoducto, como medida de contención, provocó una crisis de suministro de combustible en al menos 17 estados de EE. UU., generando escasez, compras de pánico, aumento de precios y caos logístico. Este nivel de disrupción provocó una respuesta de emergencia por parte del gobierno federal, marcando uno de los pocos casos en que un ciberataque desencadena una declaración oficial de emergencia nacional. Esto resalta el carácter excepcional del evento dentro del contexto de la ciberseguridad moderna.
 
 ### 3. Uso integral de recursos de la dark web
+Este incidente representa un ejemplo claro de cómo la dark web puede ser utilizada de forma estructurada a lo largo de todo el ciclo de un ciberataque. Las credenciales comprometidas que facilitaron el acceso inicial fueron obtenidas de foros clandestinos; la exigencia de rescate se realizó a través de un portal oculto en la red Tor; y los datos robados estaban amenazados con ser publicados en sitios privados de filtración mantenidos por el grupo DarkSide. La dark web no solo sirvió como medio de acceso, sino también como infraestructura de extorsión y presión.
+
+### 4. Precedente regulatorio e institucional
+A raíz del incidente, el gobierno de EE. UU. no solo coordinó esfuerzos para investigar y recuperar parte del rescate, sino que también fortaleció su enfoque en ciberseguridad a nivel nacional. Este caso fue uno de los impulsores para la creación de la Joint Ransomware Task Force y del endurecimiento de regulaciones en sectores críticos. El ataque tuvo un efecto catalizador en la formulación de políticas públicas de ciberseguridad, tanto en EE. UU. como en otros países que observaron con preocupación su alcance.
+
+### 5. Valor didáctico y forense
+Desde el punto de vista analítico, el ataque a Colonial Pipeline permite mapear múltiples fases del ciclo de vida de un ciberataque: acceso inicial, movimiento lateral, persistencia, exfiltración de datos, cifrado, extorsión y respuesta. Asimismo, pone en evidencia errores comunes pero críticos, como la falta de autenticación multifactor, el mantenimiento de cuentas legadas activas y la carencia de segmentación entre redes TI y OT. Estos elementos hacen del incidente un caso de estudio completo para fines académicos y profesionales en ciberseguridad.
+
+Por estas razones, se ha considerado que el ataque a Colonial Pipeline reúne los criterios necesarios para ser clasificado como el incidente más grave dentro del análisis realizado en este informe.
 
 # **Capítulo 2: Incidente más grave: Ataque Forense al Oleoducto Colonial Pipeline (2021)**
 
