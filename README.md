@@ -253,6 +253,16 @@ Los casos anteriores representan solo una parte del conjunto de incidentes recie
  
 ## 1.2. Incidentes más graves
 
+De entre los distintos ciberataques vinculados a la dark web analizados en este informe, el ataque de ransomware a Colonial Pipeline en mayo de 2021, atribuido al grupo criminal DarkSide, fue seleccionado como el incidente más grave. Esta decisión se fundamenta en una evaluación multidimensional que considera factores técnicos, operativos, sociales y económicos.
+
+### 1. Relevancia estratégica del objetivo
+Colonial Pipeline opera uno de los sistemas de oleoductos más grandes y críticos de los Estados Unidos, responsable de transportar aproximadamente el 45% del combustible utilizado en la costa este. Esto convierte a la organización en un actor clave dentro de la infraestructura nacional. Cualquier interrupción en sus operaciones no solo afecta a la empresa en sí, sino a millones de personas y sectores enteros como el transporte, la aviación y la logística. Pocos ataques cibernéticos han tenido un impacto tan directo y tangible en la vida diaria de los ciudadanos como este.
+
+### 2. Impacto social inmediato
+La decisión de detener por completo las operaciones del oleoducto, como medida de contención, provocó una crisis de suministro de combustible en al menos 17 estados de EE. UU., generando escasez, compras de pánico, aumento de precios y caos logístico. Este nivel de disrupción provocó una respuesta de emergencia por parte del gobierno federal, marcando uno de los pocos casos en que un ciberataque desencadena una declaración oficial de emergencia nacional. Esto resalta el carácter excepcional del evento dentro del contexto de la ciberseguridad moderna.
+
+### 3. Uso integral de recursos de la dark web
+
 # **Capítulo 2: Incidente más grave: Ataque Forense al Oleoducto Colonial Pipeline (2021)**
 
 ## 2.1. Identificación del Incidente
