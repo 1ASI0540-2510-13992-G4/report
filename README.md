@@ -7,7 +7,7 @@
     margin-right: 2em;
     line-height: 2;
   }
-  
+
   p {
     text-indent: 2em; /* Sangría en el primer renglón de cada párrafo */
   }
@@ -84,7 +84,7 @@
   </tbody>
 </table>
 
---- 
+---
 
 2025 - 01
 
@@ -151,7 +151,7 @@ Este informe analiza el ataque de ransomware al oleoducto Colonial Pipeline en m
 La intrusión se originó por credenciales de VPN comprometidas, disponibles en la dark web, lo que evidencia su papel en todo el ciclo del ataque: desde el acceso inicial hasta la extorsión. El informe detalla la cronología del incidente, las vulnerabilidades explotadas, la respuesta adoptada y los TTPs empleados, mapeados al marco MITRE ATT&CK. También se presentan cinco incidentes similares y se proponen estrategias de mitigación basadas en NIST, ISO/IEC y CIS Controls. El estudio resalta la necesidad de una ciberseguridad proactiva y en capas frente a amenazas relacionadas con la dark web.
 
 !! ACÁ FALTA CITAR
- 
+
 # Indice
 ### [Registro de versiones del informe]()
 ### [Project Report Collaboration Insights]()
@@ -207,7 +207,7 @@ La intrusión se originó por credenciales de VPN comprometidas, disponibles en 
     margin-right: 2em;
     line-height: 2;
   }
-  
+
   p {
     text-indent: 2em; /* Sangría en el primer renglón de cada párrafo */
   }
@@ -249,8 +249,8 @@ A modo de contexto, a continuación, se enlistan brevemente cinco incidentes de 
 
 - 5. **Brecha de Datos en Medibank (2022):** En octubre de 2022, Medibank, la mayor aseguradora de salud de Australia, fue víctima de un ciberataque que expuso información personal y médica de aproximadamente 9,7 millones de personas. Tras negarse a pagar el rescate exigido, la empresa enfrentó una filtración progresiva de los datos robados en un blog alojado en la dark web, llevada a cabo por actores vinculados a ransomware, presuntamente afiliados al grupo REvil. Los atacantes publicaron información extremadamente sensible, como diagnósticos de VIH y tratamientos por adicciones, clasificando a los pacientes como “buenos” o “malos” con el fin de ejercer mayor presión pública. El 1 de diciembre de 2022, los responsables del ataque declararon finalizada la operación (“case closed”) y liberaron en la dark web un archivo comprimido de 5 GB, que contenía los ~200 GB de datos robados. Este grave incidente generó una fuerte respuesta social y política en Australia, incluyendo una revisión de las normativas sobre notificación de brechas y la seguridad de los datos de salud.
 
-Los casos anteriores representan solo una parte del conjunto de incidentes recientes con vínculos directos a la dark web. A continuación, se presenta un análisis detallado del caso seleccionado como principal: el ataque al oleoducto Colonial Pipeline. 
- 
+Los casos anteriores representan solo una parte del conjunto de incidentes recientes con vínculos directos a la dark web. A continuación, se presenta un análisis detallado del caso seleccionado como principal: el ataque al oleoducto Colonial Pipeline.
+
 ## 1.2. Incidentes más graves
 
 De entre los distintos ciberataques vinculados a la dark web analizados en este informe, el ataque de ransomware a Colonial Pipeline en mayo de 2021, atribuido al grupo criminal DarkSide, fue seleccionado como el incidente más grave. Esta decisión se fundamenta en una evaluación multidimensional que considera factores técnicos, operativos, sociales y económicos.
@@ -335,23 +335,23 @@ En resumen, los activos afectados fueron principalmente sistemas clave de TI cor
 
 El ataque a Colonial Pipeline tuvo un impacto significativo en varios servicios clave, afectando tanto a la operación interna como a los servicios externos relacionados con el suministro de combustible y la infraestructura crítica. A continuación, se detallan los principales servicios afectados:
 
-1. **Operación de Oleoducto y Distribución de Combustible**:  
+1. **Operación de Oleoducto y Distribución de Combustible**:
 La interrupción del flujo de combustible a través del oleoducto Colonial Pipeline fue el servicio más directamente afectado. Como medida de precaución, Colonial Pipeline decidió detener todas las operaciones del oleoducto para evitar una propagación del ataque. Esto paralizó la distribución de gasolina, diésel y combustible de aviación en la costa Este de los Estados Unidos durante casi 6 días, lo que generó escasez de combustible en varios estados.
 
 
-2. **Sistemas de Facturación y Gestión de Pedidos**:  
+2. **Sistemas de Facturación y Gestión de Pedidos**:
    Los sistemas de facturación y administración que controlan el seguimiento y pago de la distribución de productos se vieron gravemente comprometidos. El cifrado de estos sistemas impidió a Colonial Pipeline realizar las funciones de facturación necesarias para gestionar el flujo de combustible, lo que contribuyó a la decisión de cerrar el oleoducto. La incapacidad de realizar tareas administrativas vitales afectó la gestión logística y financiera del servicio.
 
 
-3. **Sistemas de Seguridad y Monitoreo**:  
+3. **Sistemas de Seguridad y Monitoreo**:
    Aunque no se comprometieron directamente los sistemas de control de la infraestructura OT, los sistemas de monitoreo y seguridad asociados con la red de TI fueron afectados. La incapacidad de monitorear los sistemas de control del oleoducto durante el ataque obligó a Colonial Pipeline a tomar medidas preventivas, como la detención del servicio para garantizar la seguridad operativa y la integridad de la infraestructura crítica.
 
 
-4. **Acceso a Información y Comunicación Interna**:  
+4. **Acceso a Información y Comunicación Interna**:
    El ataque afectó a las estaciones de trabajo corporativas y los servidores de la empresa, lo que interrumpió las comunicaciones internas y la accesibilidad de información vital para los empleados. Esto impidió la correcta coordinación de la respuesta al incidente y afectó el acceso a los recursos necesarios para la recuperación.
 
 
-5. **Servicios de Backup y Recuperación de Datos**:  
+5. **Servicios de Backup y Recuperación de Datos**:
    Los servicios de respaldo, aunque parcialmente comprometidos, permitieron a la empresa restaurar sus sistemas. La restauración de operaciones dependió en gran medida de los backups offline, lo que subraya la importancia de contar con copias de seguridad externas y no accesibles directamente desde la red principal para evitar que se vean comprometidas en ataques como este.
 
 
@@ -381,7 +381,7 @@ A nivel de sistemas internos de TI, algunos servidores y estaciones de trabajo t
 
 Este tiempo de inactividad evidenció la alta dependencia entre los sistemas TI y las operaciones OT, así como la necesidad de contar con planes de respuesta y recuperación más robustos para minimizar el impacto en la continuidad del negocio.
 
-#### Tabla 
+#### Tabla
 
 <table>
   <thead>
@@ -472,7 +472,7 @@ Colonial Pipeline contaba con un Plan de Respuesta a Incidentes (PRI) y ejecutó
   - Aplicación de MFA de emergencia antes de restablecer accesos remotos.
 
 **4. Comunicación y Coordinación:**
-   
+
 - Notificación rápida a autoridades: FBI, CISA y Departamento de Energía fueron informados desde el inicio.
 - Comunicaciones públicas claras: Colonial fue progresivamente transparente sobre la naturaleza del incidente y sus efectos.
 - Colaboración activa: Participaron en alertas conjuntas con CISA/FBI para prevenir ataques similares en otras infraestructuras.
@@ -480,19 +480,19 @@ Colonial Pipeline contaba con un Plan de Respuesta a Incidentes (PRI) y ejecutó
 **5. Mejora Continua (Post-Incident Activities):**
 
 - Auditoría y refuerzo de controles:
-  - Segmentación de red. 
-  - MFA universal. 
-  - Cierre de puertos y servicios obsoletos. 
+  - Segmentación de red.
+  - MFA universal.
+  - Cierre de puertos y servicios obsoletos.
   - Implementación de monitoreo continuo.
 
 
 - Lecciones compartidas:
-  - Distribución de IoCs y tácticas de DarkSide al sector energético. 
+  - Distribución de IoCs y tácticas de DarkSide al sector energético.
   - Participación en análisis de inteligencia sectorial.
 
 ### 2.1.4. Solución del incidente
 
-Colonial Pipeline adoptó un enfoque integral y coordinado para resolver el incidente de ransomware, combinando acciones técnicas, operativas y legales. Tras el análisis forense inicial, se utilizó el descifrador proporcionado por los atacantes luego del pago del rescate para intentar recuperar los sistemas cifrados. 
+Colonial Pipeline adoptó un enfoque integral y coordinado para resolver el incidente de ransomware, combinando acciones técnicas, operativas y legales. Tras el análisis forense inicial, se utilizó el descifrador proporcionado por los atacantes luego del pago del rescate para intentar recuperar los sistemas cifrados.
 
 **Cuando el descifrador resultó ineficaz en algunos equipos, se recurrió a copias de seguridad verificadas para restaurar los servicios:**
 - Se priorizó el restablecimiento seguro de los sistemas SCADA para reanudar la operación del oleoducto.
@@ -651,10 +651,10 @@ Las tácticas representan las metas de los atacantes durante el ciclo de vida de
 - **Privilege Escalation (Escalamiento de privilegios):** Obtener privilegios elevados para facilitar el movimiento lateral y el cifrado de datos.
 - **Defense Evasion (Evasión de defensa):** Evitar la detección mediante técnicas como la modificación de registros o deshabilitar antivirus.
 - **Discovery (Descubrimiento):** Realizar un reconocimiento interno para mapear la red y detectar objetivos críticos.
-- **Lateral Movement (Movimiento lateral):** Desplazamiento dentro de la red comprometida para alcanzar otras máquinas y sistemas. 
-- **Collection (Recopilación):** Recolectar datos valiosos para exfiltrarlos o cifrarlos. 
-- **Exfiltration (Exfiltración):** Extraer datos desde la red comprometida hacia un servidor de comando y control. 
-- **Command and Control (C2) (Comando y Control):** Establecer comunicación con los sistemas comprometidos mediante canales cifrados. 
+- **Lateral Movement (Movimiento lateral):** Desplazamiento dentro de la red comprometida para alcanzar otras máquinas y sistemas.
+- **Collection (Recopilación):** Recolectar datos valiosos para exfiltrarlos o cifrarlos.
+- **Exfiltration (Exfiltración):** Extraer datos desde la red comprometida hacia un servidor de comando y control.
+- **Command and Control (C2) (Comando y Control):** Establecer comunicación con los sistemas comprometidos mediante canales cifrados.
 - **Impact (Impacto):** Cifrado de datos y extorsión con el objetivo de obtener un rescate.
 
 ### 2.3.2. Técnicas
@@ -745,11 +745,11 @@ Las técnicas son métodos específicos utilizados por los atacantes dentro de c
 ### 2.3.3. Procedimientos
 Los procedimientos son las maneras específicas en que los atacantes implementan las técnicas dentro de un ataque. En este caso, los procedimientos empleados por DarkSide incluyen:
 
-- **Acceso Inicial (T1078 y T1133):** Los atacantes utilizaron credenciales válidas comprometidas y VPNs para acceder inicialmente a la red de Colonial Pipeline. Este acceso inicial fue realizado sin necesidad de phishing. 
-- **Persistencia (T1133 y T1136):** Una vez dentro de la red, los atacantes crearon cuentas ocultas y mantuvieron sesiones de VPN activas para asegurar la persistencia. También emplearon herramientas como Cobalt Strike para instalar beacons que permitieron la comunicación y control continuos dentro de la red comprometida. 
-- **Escalamiento de Privilegios (T1003):** Utilizaron herramientas como Mimikatz para volcar las credenciales de administración de dominio y escalar sus privilegios, permitiéndoles moverse lateralmente dentro de la red y cifrar sistemas críticos. 
-- **Exfiltración de Datos (T1074 y T1041):** Los atacantes exfiltraron aproximadamente 100 GB de datos de Colonial Pipeline, almacenándolos en archivos comprimidos antes de extraerlos a través de canales cifrados usando TOR. 
-- **Cifrado y Extorsión (T1486 y T1490):** Una vez que los atacantes cifraron los datos, exigieron el pago de un rescate en Bitcoin a cambio de la clave de descifrado. Además, robaron datos sensibles y amenazaron con divulgarlos en la dark web si no se pagaba el rescate. 
+- **Acceso Inicial (T1078 y T1133):** Los atacantes utilizaron credenciales válidas comprometidas y VPNs para acceder inicialmente a la red de Colonial Pipeline. Este acceso inicial fue realizado sin necesidad de phishing.
+- **Persistencia (T1133 y T1136):** Una vez dentro de la red, los atacantes crearon cuentas ocultas y mantuvieron sesiones de VPN activas para asegurar la persistencia. También emplearon herramientas como Cobalt Strike para instalar beacons que permitieron la comunicación y control continuos dentro de la red comprometida.
+- **Escalamiento de Privilegios (T1003):** Utilizaron herramientas como Mimikatz para volcar las credenciales de administración de dominio y escalar sus privilegios, permitiéndoles moverse lateralmente dentro de la red y cifrar sistemas críticos.
+- **Exfiltración de Datos (T1074 y T1041):** Los atacantes exfiltraron aproximadamente 100 GB de datos de Colonial Pipeline, almacenándolos en archivos comprimidos antes de extraerlos a través de canales cifrados usando TOR.
+- **Cifrado y Extorsión (T1486 y T1490):** Una vez que los atacantes cifraron los datos, exigieron el pago de un rescate en Bitcoin a cambio de la clave de descifrado. Además, robaron datos sensibles y amenazaron con divulgarlos en la dark web si no se pagaba el rescate.
 - **Comando y Control (T1573 y T1090.003):** Para mantener el control sobre los sistemas comprometidos, los atacantes utilizaron canales cifrados a través de TOR y emplearon Cobalt Strike para ejecutar órdenes dentro de la red comprometida.
 
 El ataque a Colonial Pipeline siguió un ciclo bien orquestado de tácticas y técnicas empleadas por el grupo DarkSide, con un enfoque en la exfiltración de datos y la extorsión mediante cifrado, todo ello facilitado por vulnerabilidades en la infraestructura de la red de la compañía.
@@ -765,10 +765,10 @@ El Common Vulnerability Scoring System (CVSS) es una métrica que ayuda a evalua
 ### 2.4.3. CWE
 El ataque a Colonial Pipeline puede clasificarse en varias categorías del Common Weakness Enumeration (CWE), que es un estándar que clasifica debilidades en software. Entre las más relevantes se incluyen:
 
-- **CWE-287:** Autenticación Incorrecta. La falta de autenticación multifactor (MFA) en el acceso remoto a través de VPN representa una debilidad crítica. Un solo factor (como una contraseña) es insuficiente para proteger sistemas expuestos a Internet. 
-- **CWE-255:** Manejo Deficiente de Credenciales. En este caso, la gestión de credenciales comprometidas fue deficiente, ya que una cuenta olvidada permaneció activa, lo que permitió a los atacantes acceder a la red. 
-- **CWE-592:** Cuentas No Deshabilitadas. La cuenta comprometida, aunque no estaba en uso, seguía activa, lo que sugiere una falta de seguimiento de cuentas inactivas. 
-- **CWE-668:** Exposición de Recursos a Esferas No Confiables. La falta de segmentación entre las redes de IT y OT permitió que un ataque a los sistemas de TI tuviera el potencial de afectar las operaciones físicas, incluso si finalmente fue mitigado por un apagado manual. 
+- **CWE-287:** Autenticación Incorrecta. La falta de autenticación multifactor (MFA) en el acceso remoto a través de VPN representa una debilidad crítica. Un solo factor (como una contraseña) es insuficiente para proteger sistemas expuestos a Internet.
+- **CWE-255:** Manejo Deficiente de Credenciales. En este caso, la gestión de credenciales comprometidas fue deficiente, ya que una cuenta olvidada permaneció activa, lo que permitió a los atacantes acceder a la red.
+- **CWE-592:** Cuentas No Deshabilitadas. La cuenta comprometida, aunque no estaba en uso, seguía activa, lo que sugiere una falta de seguimiento de cuentas inactivas.
+- **CWE-668:** Exposición de Recursos a Esferas No Confiables. La falta de segmentación entre las redes de IT y OT permitió que un ataque a los sistemas de TI tuviera el potencial de afectar las operaciones físicas, incluso si finalmente fue mitigado por un apagado manual.
 - **CWE-1193:** Falta de Alertas de Seguridad. La respuesta lenta ante el ataque indica la ausencia de una detección temprana adecuada, lo que permite que el ataque se prolongara sin ser detectado durante varios días.
 
 # **Capítulo 3: Estrategias de Ciberseguridad**
@@ -816,5 +816,27 @@ FALTA TERMINAR
 
 ## 3.3. Estrategias a Nivel de Desarrollo de Software
 
-## 3.4. Estrategias a Nivel de Sistema de Información
+Cuando se habla de ciberseguridad, muchas veces se piensa únicamente en firewalls o antivirus, pero la seguridad también comienza desde el código. En el caso de Colonial Pipeline, aunque el ataque no fue directamente al software desarrollado por la empresa, el incidente dejó en evidencia que un sistema débilmente protegido —por ejemplo, una VPN antigua sin autenticación multifactor— puede comprometer toda una operación. Por eso, es fundamental incorporar prácticas de desarrollo seguro que ayuden a evitar vulnerabilidades desde la raíz.
 
+### 1. Integración de la seguridad en el ciclo de vida del desarrollo (SDLC)
+
+No se trata solo de hacer pruebas al final, sino de considerar la seguridad desde el primer momento. Esto implica definir requisitos de seguridad desde el diseño, hacer revisiones de código, pruebas automatizadas y auditorías constantes. Modelos como el **Secure SDLC** o incluso herramientas del **OWASP SAMM** pueden ayudar a estructurar este enfoque de forma más clara y medible.
+
+### 2. Revisión y gestión de dependencias de terceros
+
+Muchos desarrollos actuales utilizan librerías externas y frameworks. Sin embargo, estas dependencias pueden traer consigo vulnerabilidades conocidas (CVE). Se recomienda el uso de escáneres de seguridad como **OWASP Dependency-Check** o **Snyk** para detectar posibles amenazas en componentes de terceros. En un ataque como el de Colonial, una biblioteca vulnerable conectada a servicios críticos podría haber facilitado aún más el acceso al sistema.
+
+### 3. Aplicación de principios de mínimo privilegio y control de accesos
+
+El código debe estar diseñado para limitar el acceso a funciones críticas. Por ejemplo, si un usuario no necesita acceder a una API interna o función del sistema, no debería poder hacerlo. Esto se aplica tanto al código como a la arquitectura de servicios. Este principio ayuda a contener posibles movimientos laterales dentro de la infraestructura, como ocurrió en Colonial Pipeline.
+
+### 4. Registro (logging) y monitoreo seguro
+
+Todo software debe contar con una bitácora detallada de sus operaciones, pero también debe asegurarse que esos logs no filtren información sensible ni sean fácilmente manipulables. Los registros son piezas clave en el análisis forense, ya que permiten reconstruir la cronología de un ataque. Por ello, se recomienda aplicar buenas prácticas como loggear eventos de autenticación, acceso a recursos y errores críticos, y protegerlos frente a alteraciones.
+
+### 5. Uso de herramientas de análisis estático y dinámico
+
+El empleo de **herramientas de análisis estático (SAST)** permite detectar vulnerabilidades directamente en el código fuente sin necesidad de ejecutarlo. Por otro lado, el **análisis dinámico (DAST)** examina el comportamiento del sistema ya en ejecución, lo cual es ideal para aplicaciones web. Ambos enfoques se complementan y ayudan a prevenir fallas de seguridad antes de que lleguen a producción.
+
+
+## 3.4. Estrategias a Nivel de Sistema de Información
