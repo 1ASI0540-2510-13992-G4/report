@@ -33,7 +33,7 @@
 
 ---
 
-<p align="center">
+<p allign="center">
   <img src="assets/upc_logo.svg"  style="width:500px; height:auto;" alt="">
 </p>
 
@@ -103,10 +103,16 @@
   </thead>
   <tbody>
     <tr>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
+      <td>TB1</td>
+      <td>13/05/2025</td>
+      <td>Irigoyen Matos, Javier Sharvel u20221d156 <br>
+Jara Benites Quique, Vladimir u202022365 <br>
+León Vivas, Fabrizio Amir u20211b994 <br>
+Lizano Coll Cardenas, Fernando Jesus u202214522 <br>
+Lopez Acuña, Mario Joaquin u202116250 <br>
+Pescorán Angulo, Juan Fabritzzio u20221c936
+</td>
+      <td>Se realizó la creación de los 3 capítulos, junto a la conclusiones y recomendaciones, se usaron citas y fuentes bibliográficas mostradas en la barte de bibliografía. En el primer capítulo se hace una introducción con un listado de múltiples incidentes a lo largo del tiempo relacionados a la ciberseguridad y el análisis forense del Software, en el segundo apítulo se trata de ver el contexto abarcado que estaremos abarcando a lo largo del resto del informe, el tercer capítulo trata sobre los planes de contingencia y múltiples estrategias que se usaron para tratar el incidente.</td>
     </tr>
     <tr>
       <td></td>
@@ -136,67 +142,69 @@ Para este proyecto hemos utilizado las herramientas GitHub para gestionar el pro
 
 Puede acceder al contenido del repositorio pulsando sobre el siguiente ícono:
 
-<p align="center">
+<p allign="center">
   <a href="https://github.com/1ASI0540-2510-13992-G4/report">
-    <img src="assets/logos/teemo_solutions_logo.jpg" style="width:200px; height:auto;" alt="">
+    <img src="assets/github-logo.png" style="width:200px; height:auto;" alt="GitHubLogo">
   </a>
 </p>
 
-aún falta colocar img xd
+
 
 # Resumen
 
-Este informe analiza el ataque de ransomware al oleoducto Colonial Pipeline en mayo de 2021, un incidente de alto impacto vinculado a la dark web, seleccionado como caso de estudio para el curso SI540. Atribuido al grupo DarkSide, el ataque paralizó el mayor sistema de distribución de combustible en EE. UU., provocando escasez de gasolina tras el cifrado de sistemas críticos y el robo de ~100 GB de datos sensibles. Los atacantes exigieron un rescate de US$4,4 millones mediante un portal en la red Tor. Posteriormente, las autoridades recuperaron parte del pago.
+Este informe analiza el ataque de ransomware al oleoducto Colonial Pipeline en mayo de 2021, un incidente de alto impacto vinculado a la dark web, seleccionado como caso de estudio para el curso SI540. Atribuido al grupo DarkSide (CISA, 2021), el ataque paralizó el mayor sistema de distribución de combustible en EE. UU., provocando escasez de gasolina tras el cifrado de sistemas críticos y el robo de ~100 GB de datos sensibles (Wikipedia, 2025). Los atacantes exigieron un rescate de US$4,4 millones mediante un portal en la red Tor, de los cuales las autoridades recuperaron parcialmente el pago meses después (Wikipedia, 2025).
 
-La intrusión se originó por credenciales de VPN comprometidas, disponibles en la dark web, lo que evidencia su papel en todo el ciclo del ataque: desde el acceso inicial hasta la extorsión. El informe detalla la cronología del incidente, las vulnerabilidades explotadas, la respuesta adoptada y los TTPs empleados, mapeados al marco MITRE ATT&CK. También se presentan cinco incidentes similares y se proponen estrategias de mitigación basadas en NIST, ISO/IEC y CIS Controls. El estudio resalta la necesidad de una ciberseguridad proactiva y en capas frente a amenazas relacionadas con la dark web.
+La intrusión se originó por credenciales de VPN comprometidas disponibles en la dark web, según reveló una investigación forense (COMPUTERWORLD ESPAÑA, 2021). Este caso evidencia el papel de la dark web en todo el ciclo del ataque: desde el acceso inicial hasta la extorsión, destacando su uso para la venta de datos robados y la coordinación de operaciones ransomware (CISA, 2021; KrebsOnSecurity, 2022).
 
-!! ACÁ FALTA CITAR
+El informe detalla la cronología del incidente, las vulnerabilidades explotadas (como la falta de autenticación multifactor), la respuesta adoptada y los TTPs empleados por DarkSide, mapeados al marco MITRE ATT&CK (CISA, 2021). Además, se presentan cinco incidentes similares, incluidos los ataques a Kaseya (BankInfoSecurity, n.d.), Costa Rica (KrebsOnSecurity, 2022), Medibank (The Hacker News, n.d.) y T-Mobile (Kramer, 2023), que refuerzan los patrones de explotación de infraestructuras críticas y fugas de datos.
+
+Finalmente, se proponen estrategias de mitigación alineadas con estándares como NIST, ISO/IEC y CIS Controls, enfocadas en gestión de credenciales, segmentación de redes y respaldos offline (CISA, 2021). Este estudio subraya la necesidad de una ciberseguridad proactiva y en capas frente a amenazas asociadas a la dark web, especialmente en sectores estratégicos.
 
 # Indice
-### [Registro de versiones del informe]()
-### [Project Report Collaboration Insights]()
-### [Indice]()
-### [Resumen]()
-### [Student Outcome]()
+### [Registro de versiones del informe](#registro-de-versiones-del-informe)
+### [Project Report Collaboration Insights](#project-report-collaboration-insights)
+### [Indice](#indice)
+### [Resumen](#resumen)
+### [Student Outcome](#student-outcome)
 
-## [Capítulo 1: Incidentes]()
-- [1.1. Listado de los últimos incidentes]()
-- [1.2. Incidentes más graves]()
+#### [Capítulo 1: Incidentes](#capítulo-1-incidentes)
+- [1.1. Listado de los últimos incidentes](#11-listado-de-últimos-incidentes)
+- [1.2. Incidentes más graves](#12-incidentes-más-graves)
 
-## [Capítulo 2: Incidente más grave (colocar el nombre)]()
-- [2.1. Identificación del Incidente]()
-  - [2.1.1. Descripción]()
-  - [2.1.2. Consecuencias]()
-    - [2.1.2.1. Activos Afectados]()
-    - [2.1.2.2. Servicios Afectados]()
-    - [2.1.2.3. Impacto]()
-    - [2.1.2.4. Tiempo de indisponibilidad]()
-  - [2.1.3. Proceso de Respuesta]()
-  - [2.1.4. Solución del incidente]()
-  - [2.1.5. Causa raíz del incidente]()
-  - [2.1.6. Plan de acción seguido]()
-  - [2.1.7. Clasificación del Incidente]()
-- [2.2. Pérdidas]()
-  - [2.2.1. Económicas]()
-  - [2.2.2. Reputacionales]()
-- [2.3. Tácticas, técnicas y procedimientos (TTPs) utilizados por el grupo]()
-  - [2.3.1. Tácticas]()
-  - [2.3.2. Técnicas]()
-  - [2.3.3. Procedimientos]()
-- [2.4. Vulnerabilidades asociadas al incidente]()
-  - [2.4.1. CVE]()
-  - [2.4.2. CVSS]()
-  - [2.4.3. CWE]()
+#### [Capítulo 2: Ataque Forense al Oleoducto Colonial Pipeline (2021)](#capítulo-2-ataque-forense-al-oleoducto-colonial-pipeline-2021)
+- [2.1. Identificación del Incidente](#21-identificación-del-incidente)
+  - [2.1.1. Descripción](#211-descripción)
+  - [2.1.2. Consecuencias](#212-consecuencias)
+    - [2.1.2.1. Activos Afectados](#2121-activos-afectados)
+    - [2.1.2.2. Servicios Afectados](#2122-servicios-afectados)
+    - [2.1.2.3. Impacto](#2123-impacto)
+    - [2.1.2.4. Tiempo de indisponibilidad](#2124-tiempo-de-indisponibilidad)
+  - [2.1.3. Proceso de Respuesta](#213-proceso-de-respuesta)
+  - [2.1.4. Solución del incidente](#214-solución-del-incidente)
+  - [2.1.5. Causa raíz del incidente](#215-causa-raíz-del-incidente)
+  - [2.1.6. Plan de acción seguido](#216-plan-de-acción-seguido)
+  - [2.1.7. Clasificación del Incidente](#217-clasificación-del-incidente)
+- [2.2. Pérdidas](#22-pérdidas)
+  - [2.2.1. Económicas](#221-económicas)
+  - [2.2.2. Reputacionales](#222-reputacionales)
+- [2.3. Tácticas, técnicas y procedimientos (TTPs) utilizados por Colonial Pipeline](#23-tácticas-técnicas-y-procedimientos-ttps-utilizados-por-el-grupo-incluir-codigos)
+  - [2.3.1. Tácticas](#231-tácticas)
+  - [2.3.2. Técnicas](#232-técnicas)
+  - [2.3.3. Procedimientos](#233-procedimientos)
+- [2.4. Vulnerabilidades asociadas al incidente](#24-vulnerabilidades-asociadas-al-incidente)
+  - [2.4.1. CVE](#241-cve)
+  - [2.4.2. CVSS](#242-cvss)
+  - [2.4.3. CWE](#243-cwe)
 
-## [Capítulo 3: Estrategias de Ciberseguridad]()
-- [3.1. Estrategias a Nivel Organizacional]()
-- [3.2. Estrategias a Nivel de Infraestructura]()
-- [3.3. Estrategias a Nivel de Desarrollo de Software]()
-- [3.4. Estrategias a Nivel de Sistema de Información]()
+#### [Capítulo 3: Estrategias de Ciberseguridad](#capítulo-3-estrategias-de-ciberseguridad)
+- [3.1. Estrategias a Nivel Organizacional](#31-estrategias-a-nivel-organizacional)
+- [3.2. Estrategias a Nivel de Infraestructura](#32-estrategias-a-nivel-de-infraestructura)
+- [3.3. Estrategias a Nivel de Desarrollo de Software](#33-estrategias-a-nivel-de-desarrollo-de-software)
+- [3.4. Estrategias a Nivel de Sistema de Información](#34-estrategias-a-nivel-de-sistema-de-información)
 
-## [Conclusiones]()
-## [Recomendaciones]()
-## [Bibliografía]()
+## [Conclusiones](#conclusiones)
+## [Recomendaciones](#recomendaciones)
+## [Bibliografía](#bibliografía)
 
 <style>
   body {
@@ -272,7 +280,7 @@ Desde el punto de vista analítico, el ataque a Colonial Pipeline permite mapear
 
 Por estas razones, se ha considerado que el ataque a Colonial Pipeline reúne los criterios necesarios para ser clasificado como el incidente más grave dentro del análisis realizado en este informe.
 
-# **Capítulo 2: Incidente más grave: Ataque Forense al Oleoducto Colonial Pipeline (2021)**
+# Capítulo 2: Ataque Forense al Oleoducto Colonial Pipeline (2021)
 
 ## 2.1. Identificación del Incidente
 
@@ -554,7 +562,7 @@ La causa raíz del incidente de Colonial Pipeline se puede atribuir a una serie 
   - Esta cooperación fue clave para prevenir un ataque similar en otras empresas del sector energético.
 
 
-### 2.1.7. Clasificación del Incidente (Taxonomía)
+### 2.1.7. Clasificación del Incidente
 
 <p>El incidente que afectó a Colonial Pipeline se clasifica como un <strong>ciberataque de tipo ransomware</strong>. El grupo responsable fue DarkSide, un actor de amenazas conocido por llevar a cabo ataques de ransomware. Este grupo cifró los sistemas de Colonial Pipeline y exigió un rescate para restaurar el acceso a los datos y sistemas comprometidos. La técnica empleada para este ataque es común en las campañas de ransomware, donde los atacantes buscan bloquear el acceso a los sistemas críticos de las organizaciones y extorsionarlas a cambio de una recompensa.</p>
 
@@ -923,3 +931,19 @@ A partir del análisis forense del incidente sufrido por Colonial Pipeline, se p
 
 - Establecer canales activos de intercambio de inteligencia de amenazas con otros actores del sector (ej. energía, transporte).
 - Participar en iniciativas públicas-privadas lideradas por organismos como CISA o el CSIRT nacional para anticipar nuevas variantes de ransomware.
+
+## Bibliografía
+
+COMPUTERWORLD ESPAÑA. (2021, June 8). <i>El ataque a Colonial Pipeline se originó con el robo de una sola contraseña</i>. Computerworld.es. https://www.computerworld.es/article/2119818/el-ataque-a-colonial-pipeline-se-origino-con-el-robo-de-una-sola-contrasena.html
+
+<i>Costa Rica may be pawn in Conti ransomware Group’s bid to rebrand, evade sanctions</i>. (2022, June 1). https://krebsonsecurity.com/2022/05/costa-rica-may-be-pawn-in-conti-ransomware-groups-bid-to-rebrand-evade-sanctions/
+
+<i>DarkSide Ransomware: Best Practices for Preventing Business Disruption from Ransomware Attacks | CISA. (2021, July 8)</i>. Cybersecurity and Infrastructure Security Agency CISA. https://www.cisa.gov/news-events/cybersecurity-advisories/aa21-131a#:~:text=CISA%20and%20FBI%20urge%20CI,regularly%20testing%20manual%20controls%3B%20and
+
+<i>Kaseya attack: REvil offers $70 million “Universal Decryptor.” (n.d.)</i>. https://www.bankinfosecurity.com/kaseya-attack-revil-offers-70-million-super-decryptor-a-16988
+
+Kramer, S. (2023, June 28). <i>T‐Mobile’s massive data breach impacts 100 million</i>. The Futurum Group. https://futurumgroup.com/insights/t%E2%80%91mobiles-massive-data-breach-impacts-100-million-t-mobile-usa-customers/
+
+The Hacker News. (n.d.). <i>Medibank refuses to pay ransom after 9.7 million customers exposed in ransomware hack</i>. https://thehackernews.com/2022/11/medibank-refuses-to-pay-ransom-after-97.html
+
+Wikipedia contributors. (2025, May 6). <i>Colonial Pipeline ransomware attack</i>. Wikipedia. https://en.wikipedia.org/wiki/Colonial_Pipeline_ransomware_attack
